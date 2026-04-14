@@ -2,6 +2,9 @@
   "name": "canna-store-design",
   "version": "0.1.0",
   "private": true,
+  "description": "Cannabis Store Vienna premium TV display and promotional storefront experience.",
+  "author": "Elvis Jelecevic",
+  "license": "UNLICENSED",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
