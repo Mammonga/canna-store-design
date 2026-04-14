@@ -1,0 +1,45 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="
+      M150,38
+      C182,28 215,36 238,58
+      C264,82 272,118 264,150
+      C272,182 264,218 238,242
+      C215,264 182,272 150,262
+      C118,272 85,264 62,242
+      C36,218 28,182 36,150
+      C28,118 36,82 62,58
+      C85,36 118,28 150,38
+      Z
+    "
+    fill="#F4F4F4"
+    stroke="#000000"
+    stroke-width="6"
+  />
+
+  <text
+    x="150"
+    y="128"
+    text-anchor="middle"
+    font-size="28"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-weight="700"
+    fill="#000000"
+    letter-spacing="1.5"
+  >
+    COMING
+  </text>
+
+  <text
+    x="150"
+    y="168"
+    text-anchor="middle"
+    font-size="28"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-weight="700"
+    fill="#000000"
+    letter-spacing="1.5"
+  >
+    SOON!
+  </text>
+</svg>
