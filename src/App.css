@@ -44,12 +44,177 @@
 }
 
 .brand-row {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1.4rem;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 9.75rem;
+}
+
+.brand-smoke {
+  position: absolute;
+  inset: 0 -4% 0 -6%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.smoke-wave {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.smoke-outer-glow,
+.smoke-mid-glow,
+.smoke-tendril,
+.smoke-ribbon,
+.smoke-core,
+.smoke-highlight {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Atmospheric bloom */
+.smoke-outer-glow {
+  stroke: url(#smokeGradGlow);
+  stroke-width: 74;
+  filter: url(#smokeTurbHeavy);
+  opacity: 0.26;
+  animation: smoke-writhe-a 38s ease-in-out infinite;
+}
+
+/* Volume glow */
+.smoke-mid-glow {
+  stroke: url(#smokeGradMid);
+  stroke-width: 44;
+  filter: url(#smokeTurbMed);
+  opacity: 0.44;
+  animation: smoke-writhe-b 26s ease-in-out infinite;
+}
+
+/* Offset depth tendril */
+.smoke-tendril {
+  stroke: url(#smokeGradMid);
+  stroke-width: 20;
+  filter: url(#smokeTurbMed);
+  opacity: 0.36;
+  animation: smoke-writhe-a 32s ease-in-out infinite reverse;
+  animation-delay: -12s;
+}
+
+/* Main ribbon */
+.smoke-ribbon {
+  stroke: url(#smokeGradCore);
+  stroke-width: 15;
+  filter: url(#smokeTurbLight);
+  opacity: 0.70;
+  animation: smoke-writhe-b 22s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+/* Tight core thread */
+.smoke-core {
+  stroke: url(#smokeGradCore);
+  stroke-width: 5.5;
+  filter: url(#smokeTurbLight);
+  opacity: 0.55;
+  animation: smoke-drift-a 17s ease-in-out infinite reverse;
+  animation-delay: -8s;
+}
+
+/* Bright highlight edge */
+.smoke-highlight {
+  stroke: url(#smokeGradHighlight);
+  stroke-width: 2;
+  filter: url(#smokeTurbLight);
+  opacity: 0.36;
+  animation: smoke-drift-c 20s ease-in-out infinite;
+  animation-delay: -14s;
+}
+
+/* ── Wisps & flow-backs ───────────────────────────────────────────────────── */
+
+.smoke-wisp-1,
+.smoke-wisp-2,
+.smoke-wisp-3,
+.smoke-wisp-4,
+.smoke-wisp-5 {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.smoke-wisp-1 {
+  stroke: url(#smokeGradMid);
+  stroke-width: 10;
+  filter: url(#smokeTurbMed);
+  animation: smoke-wisp-pulse 15s ease-in-out infinite, smoke-writhe-a 24s ease-in-out infinite;
+}
+
+.smoke-wisp-2 {
+  stroke: url(#smokeGradMid);
+  stroke-width: 8;
+  filter: url(#smokeTurbMed);
+  animation: smoke-wisp-pulse 19s ease-in-out infinite, smoke-writhe-b 29s ease-in-out infinite;
+  animation-delay: -6s, -8s;
+}
+
+.smoke-wisp-3 {
+  stroke: url(#smokeGradCore);
+  stroke-width: 7;
+  filter: url(#smokeTurbLight);
+  animation: smoke-wisp-pulse 14s ease-in-out infinite, smoke-drift-a 22s ease-in-out infinite;
+  animation-delay: -10s, -7s;
+}
+
+.smoke-wisp-4 {
+  stroke: url(#smokeGradCore);
+  stroke-width: 5;
+  filter: url(#smokeTurbLight);
+  animation: smoke-wisp-pulse 12s ease-in-out infinite, smoke-drift-c 19s ease-in-out infinite;
+  animation-delay: -2.5s, -14s;
+}
+
+.smoke-wisp-5 {
+  stroke: url(#smokeGradMid);
+  stroke-width: 9;
+  filter: url(#smokeTurbMed);
+  animation: smoke-wisp-pulse 22s ease-in-out infinite, smoke-writhe-b 27s ease-in-out infinite reverse;
+  animation-delay: -15s, -3s;
+}
+
+/* Flow-back curl 1 – large curl near right end */
+.smoke-flowback {
+  fill: none;
+  stroke: url(#smokeGradMid);
+  stroke-width: 13;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: url(#smokeTurbMed);
+  opacity: 0.30;
+  animation: smoke-writhe-a 32s ease-in-out infinite reverse;
+  animation-delay: -7s;
+}
+
+/* Flow-back curl 2 – smaller mid-stream curl */
+.smoke-flowback-2 {
+  fill: none;
+  stroke: url(#smokeGradCore);
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: url(#smokeTurbLight);
+  animation: smoke-wisp-pulse 17s ease-in-out infinite, smoke-drift-b 22s ease-in-out infinite reverse;
+  animation-delay: -8s, -12s;
 }
 
 .brand-mark {
+  position: relative;
+  z-index: 1;
   width: 9rem;
   height: 9rem;
   border: 1px solid rgba(139, 255, 170, 0.32);
@@ -67,6 +232,8 @@
 }
 
 .brand-copy h1 {
+  position: relative;
+  z-index: 1;
   margin: 0;
   font-family: 'Arial Nova', 'Aptos', 'Segoe UI', sans-serif;
   font-size: clamp(2.2rem, 3vw, 3.7rem);
@@ -76,6 +243,8 @@
 }
 
 .brand-copy p {
+  position: relative;
+  z-index: 1;
   margin: 0.45rem 0 0;
   color: rgba(233, 240, 232, 0.7);
   font-size: 1rem;
@@ -137,10 +306,10 @@
 }
 
 .subgroup-title {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+  column-gap: 1rem;
   margin: 0 0 0.82rem;
   color: #97ff97;
   font-family: 'Arial Nova', 'Aptos', 'Segoe UI', sans-serif;
@@ -154,6 +323,8 @@
   color: rgba(226, 235, 225, 0.52);
   font-size: 0.72rem;
   letter-spacing: 0.18em;
+  justify-self: end;
+  text-align: right;
 }
 
 .menu-items {
@@ -380,6 +551,112 @@
   }
   50% {
     transform: translate3d(0, -10px, 0) scale(calc(var(--package-scale, 0.84) + 0.012));
+  }
+}
+
+@keyframes smoke-wisp-pulse {
+  0% {
+    opacity: 0;
+  }
+  14% {
+    opacity: 0.40;
+  }
+  52% {
+    opacity: 0.32;
+  }
+  88% {
+    opacity: 0.14;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* drift – 4-stop, more aggressive translate + scale */
+@keyframes smoke-drift-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scaleX(1);
+  }
+  20% {
+    transform: translate3d(14px, -9px, 0) scaleX(1.022);
+  }
+  48% {
+    transform: translate3d(-9px, 6px, 0) scaleX(0.982);
+  }
+  72% {
+    transform: translate3d(18px, -5px, 0) scaleX(1.018);
+  }
+}
+
+@keyframes smoke-drift-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scaleX(1);
+  }
+  25% {
+    transform: translate3d(-16px, 7px, 0) scaleX(1.026);
+  }
+  55% {
+    transform: translate3d(11px, -8px, 0) scaleX(0.978);
+  }
+  80% {
+    transform: translate3d(-20px, 10px, 0) scaleX(1.020);
+  }
+}
+
+@keyframes smoke-drift-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scaleX(1);
+  }
+  18% {
+    transform: translate3d(20px, -6px, 0) scaleX(1.016);
+  }
+  44% {
+    transform: translate3d(-13px, 9px, 0) scaleX(0.984);
+  }
+  74% {
+    transform: translate3d(24px, -7px, 0) scaleX(1.024);
+  }
+}
+
+/* writhe – 5-stop, adds scaleY distortion for billowing effect */
+@keyframes smoke-writhe-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scaleX(1) scaleY(1);
+  }
+  15% {
+    transform: translate3d(16px, -10px, 0) scaleX(1.024) scaleY(0.96);
+  }
+  38% {
+    transform: translate3d(-10px, 7px, 0) scaleX(0.978) scaleY(1.04);
+  }
+  62% {
+    transform: translate3d(22px, -5px, 0) scaleX(1.020) scaleY(0.97);
+  }
+  82% {
+    transform: translate3d(-14px, 11px, 0) scaleX(0.984) scaleY(1.03);
+  }
+}
+
+@keyframes smoke-writhe-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scaleX(1) scaleY(1);
+  }
+  22% {
+    transform: translate3d(-18px, 8px, 0) scaleX(1.028) scaleY(1.05);
+  }
+  42% {
+    transform: translate3d(12px, -9px, 0) scaleX(0.974) scaleY(0.95);
+  }
+  65% {
+    transform: translate3d(-8px, 12px, 0) scaleX(1.022) scaleY(1.04);
+  }
+  85% {
+    transform: translate3d(26px, -6px, 0) scaleX(0.980) scaleY(0.96);
   }
 }
 
