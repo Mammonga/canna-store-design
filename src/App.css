@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
 .screen-shell {
   min-height: 100vh;
   min-height: 100dvh;
@@ -235,7 +237,7 @@
   position: relative;
   z-index: 1;
   margin: 0;
-  font-family: 'Arial Nova', 'Aptos', 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2.2rem, 3vw, 3.7rem);
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -262,7 +264,7 @@
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.9rem 2.35rem;
+  gap: 2.4rem 2.35rem;
   flex: 1;
   align-content: start;
 }
@@ -279,16 +281,17 @@
   justify-content: space-between;
   gap: 1rem;
   margin: 0 0 0.9rem;
-  color: #97ff97;
-  font-family: 'Arial Nova', 'Aptos', 'Segoe UI', sans-serif;
+  padding-top: 0.6rem;
+  color: #b8ffb8;
+  font-family: 'Inter', sans-serif;
   font-size: 1.08rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  text-shadow: 0 0 18px rgba(116, 255, 141, 0.22);
+  text-shadow: 0 0 24px rgba(116, 255, 141, 0.32);
 }
 
 .section-title-translation {
-  color: rgba(226, 235, 225, 0.56);
+  color: rgba(226, 235, 225, 0.42);
   font-size: 0.76rem;
   letter-spacing: 0.2em;
 }
@@ -301,8 +304,14 @@
 
 .menu-subgroup {
   margin-top: 1.3rem;
+  margin-bottom: 0.5rem;
   padding-top: 1.05rem;
   border-top: 1px solid rgba(116, 255, 141, 0.14);
+}
+
+.menu-subgroup--compact {
+  margin-top: 0.5rem;
+  padding-top: 0.6rem;
 }
 
 .subgroup-title {
@@ -311,16 +320,16 @@
   align-items: baseline;
   column-gap: 1rem;
   margin: 0 0 0.82rem;
-  color: #97ff97;
-  font-family: 'Arial Nova', 'Aptos', 'Segoe UI', sans-serif;
+  color: #b8ffb8;
+  font-family: 'Inter', sans-serif;
   font-size: 0.98rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  text-shadow: 0 0 18px rgba(116, 255, 141, 0.2);
+  text-shadow: 0 0 24px rgba(116, 255, 141, 0.30);
 }
 
 .subgroup-title-translation {
-  color: rgba(226, 235, 225, 0.52);
+  color: rgba(226, 235, 225, 0.42);
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   justify-self: end;
@@ -329,11 +338,17 @@
 
 .menu-items {
   display: grid;
-  gap: 0.88rem;
+  gap: 1.1rem;
 }
 
 .menu-items-compact {
   gap: 0.76rem;
+}
+
+.menu-item.is-featured .item-name,
+.menu-item.is-featured .item-price {
+  color: var(--item-accent);
+  transition: color 600ms ease;
 }
 
 .menu-item {
@@ -362,12 +377,19 @@
 }
 
 .item-price {
-  color: rgba(252, 255, 249, 0.92);
+  color: rgba(252, 255, 249, 1);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.08em;
   white-space: nowrap;
   text-align: right;
   font-size: 0.98rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.price-tier {
+  display: block;
 }
 
 .ad-panel {
@@ -498,7 +520,7 @@
 
 .ad-title {
   margin: 0;
-  font-family: 'Arial Nova', 'Aptos', 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2.3rem, 3vw, 4.2rem);
   line-height: 0.96;
   letter-spacing: 0.08em;

@@ -11,7 +11,7 @@ body,
 }
 
 body {
-  font-family: 'Segoe UI Variable', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #040504;

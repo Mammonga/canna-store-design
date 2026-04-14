@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import CannastoreMenu from './components/CannastoreMenu';
 import ZoogiesAdLoop from './components/ZoogiesAdLoop';
@@ -7,8 +8,8 @@ const menuSections = [
     titleDe: 'Premium Qualität',
     titleEn: 'Premium Quality',
     items: [
-      { name: 'Hash', translation: 'Hash', price: '1G 25 EUR | 2,5G 50 EUR' },
-      { name: 'Extrakte', translation: 'Extracts', price: '1G 30 EUR | 2,5G 60 EUR' },
+      { name: 'Hash', translation: 'Hash', price: ['1G — 25 EUR', '2,5G — 50 EUR'] },
+      { name: 'Extrakte', translation: 'Extracts', price: ['1G — 30 EUR', '2,5G — 60 EUR'] },
     ],
     groups: [
       {
@@ -21,6 +22,13 @@ const menuSections = [
           { name: 'Synergy Forte', translation: '10% CBD + 10% CBG', price: '79 EUR' },
           { name: 'Deep Ease', translation: '4% CBD + 25% CBG', price: '99 EUR' },
           { name: 'Synergy Ultra', translation: '15% CBD + 15% CBG', price: '99 EUR' },
+        ],
+      },
+      {
+        titleDe: 'Zoogies Aroma Pebbles',
+        titleEn: 'Aroma Pebbles',
+        items: [
+          { menuId: 'zoogies-blueberry-pebbles', name: 'Blueberry Pebbles', translation: 'Blaubeere', price: '1x 45€ · 3x 99€', accentColor: '#4f7cff' },
         ],
       },
     ],
@@ -50,12 +58,18 @@ const menuSections = [
           { name: '100G', translation: '100 grams', price: '900 EUR' },
         ],
       },
+      {
+        items: [
+          { menuId: 'zoogies-strawberry-pop', name: 'Strawberry Pop', translation: 'Erdbeere', price: '1x 45€ · 3x 99€', accentColor: '#ff5ba4' },
+        ],
+      },
     ],
   },
 ];
 
 const slides = [
   {
+    menuId: 'zoogies-blueberry-pebbles',
     eyebrow: 'Zoogies Drop',
     title: 'Blueberry Pebbles',
     subtitle: 'Deep berry profile with a cold neon finish.',
@@ -71,6 +85,7 @@ const slides = [
     ],
   },
   {
+    menuId: 'zoogies-strawberry-pop',
     eyebrow: 'Featured Flavor',
     title: 'Strawberry Pop',
     subtitle: 'Candy-forward color and a bright retail shelf presence.',
@@ -88,7 +103,7 @@ const slides = [
   {
     eyebrow: 'Coming Soon',
     title: 'Green Apple',
-    subtitle: 'Package framed smaller with pebbles in front and around it.',
+    subtitle: 'Crisp green apple with a fresh tart edge — dropping soon.',
     image: `${process.env.PUBLIC_URL}/Zoogies_Apple_Front.webp`,
     glow: 'rgba(138, 226, 52, 0.5)',
     palette: ['#081607', '#20441a', '#8ae234'],
@@ -103,7 +118,7 @@ const slides = [
   {
     eyebrow: 'Coming Soon',
     title: 'Cherry Rush',
-    subtitle: 'Smaller pack composition with foreground pebbles and the real badge.',
+    subtitle: 'Bold cherry intensity with a deep red finish — coming to the shelf soon.',
     image: `${process.env.PUBLIC_URL}/Zoogies_Cherry_Front.webp`,
     glow: 'rgba(255, 92, 87, 0.5)',
     palette: ['#170808', '#5f1718', '#ff5c57'],
@@ -136,11 +151,13 @@ const slides = [
 ];
 
 function App() {
+  const [activeMenuId, setActiveMenuId] = useState(slides[0].menuId ?? null);
+
   return (
     <main className="screen-shell">
       <section className="screen-layout" aria-label="Cannabis Store Vienna digital menu">
-        <CannastoreMenu sections={menuSections} />
-        <ZoogiesAdLoop slides={slides} />
+        <CannastoreMenu sections={menuSections} activeMenuId={activeMenuId} />
+        <ZoogiesAdLoop slides={slides} onSlideChange={setActiveMenuId} />
       </section>
     </main>
   );

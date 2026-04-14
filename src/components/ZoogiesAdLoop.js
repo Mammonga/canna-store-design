@@ -3,13 +3,17 @@ import { useEffect, useState } from 'react';
 const comingSoonImage = `${process.env.PUBLIC_URL}/coming_soon.svg`;
 const priceBadgeImage = `${process.env.PUBLIC_URL}/price_badge.svg`;
 
-function ZoogiesAdLoop({ slides }) {
+function ZoogiesAdLoop({ slides, onSlideChange }) {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    onSlideChange?.(slides[activeIndex]?.menuId ?? null);
+  }, [activeIndex]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setActiveIndex((currentIndex) => (currentIndex + 1) % slides.length);
-    }, 5000);
+    }, 9000);
 
     return () => window.clearInterval(intervalId);
   }, [slides.length]);

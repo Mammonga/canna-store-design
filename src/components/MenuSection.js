@@ -7,19 +7,30 @@ function slugify(value) {
     .replace(/^-|-$/g, '');
 }
 
-function renderItems(items) {
-  return items.map((item) => (
-    <div className="menu-item" key={`${item.name}-${item.price}`}>
-      <div className="item-copy">
-        <span className="item-name">{item.name}</span>
-        <span className="item-translation">{item.translation}</span>
+function renderItems(items, activeMenuId) {
+  return items.map((item) => {
+    const isFeatured = item.menuId && item.menuId === activeMenuId;
+    return (
+      <div
+        className={`menu-item${isFeatured ? ' is-featured' : ''}`}
+        key={item.name}
+        style={isFeatured ? { '--item-accent': item.accentColor } : undefined}
+      >
+        <div className="item-copy">
+          <span className="item-name">{item.name}</span>
+          <span className="item-translation">{item.translation}</span>
+        </div>
+        <span className="item-price">
+          {Array.isArray(item.price)
+            ? item.price.map((tier) => <span key={tier} className="price-tier">{tier}</span>)
+            : item.price}
+        </span>
       </div>
-      <span className="item-price">{item.price}</span>
-    </div>
-  ));
+    );
+  });
 }
 
-function MenuSection({ titleDe, titleEn, items, groups }) {
+function MenuSection({ titleDe, titleEn, items, groups, activeMenuId }) {
   const sectionId = `section-${slugify(titleDe)}`;
 
   return (
@@ -29,14 +40,16 @@ function MenuSection({ titleDe, titleEn, items, groups }) {
         <span className="section-title-translation">{titleEn}</span>
       </h2>
       <div className="section-rule" />
-      {items.length > 0 ? <div className="menu-items">{renderItems(items)}</div> : null}
+      {items.length > 0 ? <div className="menu-items">{renderItems(items, activeMenuId)}</div> : null}
       {groups?.map((group) => (
-        <div className="menu-subgroup" key={group.titleDe}>
-          <h3 className="subgroup-title">
-            <span>{group.titleDe}</span>
-            <span className="subgroup-title-translation">{group.titleEn}</span>
-          </h3>
-          <div className="menu-items menu-items-compact">{renderItems(group.items)}</div>
+        <div className={`menu-subgroup${!group.titleDe ? ' menu-subgroup--compact' : ''}`} key={group.titleDe ?? group.items[0]?.name}>
+          {group.titleDe ? (
+            <h3 className="subgroup-title">
+              <span>{group.titleDe}</span>
+              <span className="subgroup-title-translation">{group.titleEn}</span>
+            </h3>
+          ) : null}
+          <div className="menu-items menu-items-compact">{renderItems(group.items, activeMenuId)}</div>
         </div>
       ))}
     </section>

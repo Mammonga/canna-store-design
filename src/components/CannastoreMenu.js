@@ -48,7 +48,7 @@ const KS5b = '0.4 0 0.6 1;0.1 0 0.9 1;0.3 0 0.7 1;0.1 0 0.9 1;0.4 0 0.6 1';
 const KS5c = '0.2 0 0.8 1;0.1 0 0.9 1;0.2 0 0.8 1;0.1 0 0.9 1;0.2 0 0.8 1';
 const KS2  = '0.45 0 0.55 1;0.45 0 0.55 1';
 
-function CannastoreMenu({ sections }) {
+function CannastoreMenu({ sections, activeMenuId }) {
   return (
     <section className="menu-panel">
       <header className="menu-header">
@@ -255,6 +255,7 @@ function CannastoreMenu({ sections }) {
             titleEn={section.titleEn}
             items={section.items}
             groups={section.groups}
+            activeMenuId={activeMenuId}
           />
         ))}
       </div>
