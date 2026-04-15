@@ -363,9 +363,9 @@ body {
 .ad-coming-soon {
   position: absolute;
   z-index: 3;
-  display: block;
-  width: auto;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transform-origin: center;
   will-change: transform;
 }
@@ -373,7 +373,10 @@ body {
 .ad-price-badge {
   top: 8%;
   left: 20%;
-  width: min(17vw, 10.5rem);
+  gap: 0.08rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(4, 6, 4, 0.84);
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
   animation: float-badge 5s ease-in-out infinite;
 }
@@ -381,9 +384,37 @@ body {
 .ad-coming-soon {
   top: 7%;
   right: 8%;
-  width: min(13vw, 8.1rem);
+  padding: 0.6rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(4, 6, 4, 0.84);
+  font-size: 0.64rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.32));
   animation: float-badge 5.4s ease-in-out infinite;
+}
+
+.ad-price-from {
+  font-size: 0.56rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.ad-price-amount {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.ad-price-unit {
+  font-size: 0.56rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.48);
 }
 
 .ad-image-tint {
@@ -560,83 +591,83 @@ body {
   }
 
   .menu-panel {
-    padding: 2.1rem 2.6rem 1.9rem;
+    padding: 2.25rem 2.75rem 2rem;
   }
 
   .menu-header {
-    gap: 0.85rem;
-    margin-bottom: 1rem;
+    gap: 0.95rem;
+    margin-bottom: 1.15rem;
   }
 
   .brand-row {
-    min-height: 6.25rem;
-    gap: 1rem;
+    min-height: 6.55rem;
+    gap: 1.05rem;
   }
 
   .brand-mark {
-    width: 6.35rem;
-    height: 6.35rem;
+    width: 6.5rem;
+    height: 6.5rem;
   }
 
   .brand-copy h1 {
-    font-size: clamp(2.45rem, 2.25vw, 4.3rem);
+    font-size: clamp(2.6rem, 2.4vw, 4.45rem);
   }
 
   .brand-copy p {
-    margin-top: 0.45rem;
-    font-size: 0.88rem;
+    margin-top: 0.5rem;
+    font-size: 0.92rem;
   }
 
   .menu-grid {
-    gap: 1.25rem 1.7rem;
+    gap: 1.45rem 1.9rem;
   }
 
   .section-title {
-    margin-bottom: 0.6rem;
-    padding-top: 0.15rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.72rem;
+    padding-top: 0.2rem;
+    font-size: 0.96rem;
   }
 
   .section-title-translation,
   .subgroup-title-translation {
-    font-size: 0.6rem;
+    font-size: 0.64rem;
   }
 
   .section-rule {
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.82rem;
   }
 
   .menu-subgroup {
-    margin-top: 0.72rem;
-    padding-top: 0.65rem;
+    margin-top: 0.88rem;
+    padding-top: 0.78rem;
   }
 
   .subgroup-title {
-    margin-bottom: 0.6rem;
-    font-size: 0.82rem;
+    margin-bottom: 0.68rem;
+    font-size: 0.87rem;
   }
 
   .menu-items {
-    gap: 0.56rem;
+    gap: 0.68rem;
   }
 
   .menu-items-compact {
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 
   .item-name {
-    font-size: 0.88rem;
-    line-height: 1.08;
+    font-size: 0.93rem;
+    line-height: 1.1;
   }
 
   .item-translation {
-    font-size: 0.58rem;
+    font-size: 0.62rem;
   }
 
   .item-price {
-    gap: 0.1rem;
-    font-size: 0.9rem;
-    line-height: 1;
+    gap: 0.12rem;
+    font-size: 0.95rem;
+    line-height: 1.02;
   }
 
   .ad-package-image {

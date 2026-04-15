@@ -61,20 +61,14 @@ function ZoogiesAdLoop({ slides, onSlideChange }) {
               />
             ))}
             {activeSlide.showPriceBadge ? (
-              <img
-                className="ad-price-badge"
-                src={`${process.env.PUBLIC_URL}/price_badge.svg`}
-                alt="Price badge"
-                aria-hidden="true"
-              />
+              <div className="ad-price-badge" aria-label={`Ab ${activeSlide.priceText}`}>
+                <span className="ad-price-from">ab</span>
+                <span className="ad-price-amount">{activeSlide.priceText}</span>
+                <span className="ad-price-unit">pro Stk.</span>
+              </div>
             ) : null}
             {activeSlide.comingSoon ? (
-              <img
-                className="ad-coming-soon"
-                src={`${process.env.PUBLIC_URL}/coming_soon.svg`}
-                alt="Coming soon"
-                aria-hidden="true"
-              />
+              <div className="ad-coming-soon">Coming Soon</div>
             ) : null}
           </div>
         )}
