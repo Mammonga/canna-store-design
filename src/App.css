@@ -435,42 +435,42 @@ body {
 .ad-content {
   position: absolute;
   left: 2.3rem;
-  bottom: 4.4rem;
+  bottom: 5rem;
   z-index: 4;
-  width: min(25rem, 42%);
+  width: min(23rem, 40%);
 }
 
 .ad-eyebrow {
   margin: 0 0 0.6rem;
   color: rgba(247, 250, 245, 0.76);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 
 .ad-title {
   margin: 0;
-  font-size: clamp(2.4rem, 3vw, 4rem);
-  line-height: 0.94;
+  font-size: clamp(2.1rem, 2.55vw, 3.45rem);
+  line-height: 0.92;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .ad-subtitle {
-  margin: 0.9rem 0 1.25rem;
-  max-width: 21rem;
+  margin: 0.75rem 0 1rem;
+  max-width: 18rem;
   color: rgba(250, 251, 248, 0.84);
-  font-size: 1rem;
-  line-height: 1.45;
+  font-size: 0.88rem;
+  line-height: 1.32;
 }
 
 .ad-badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.52rem 0.78rem;
+  padding: 0.46rem 0.68rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
   background: rgba(6, 8, 6, 0.18);
-  font-size: 0.74rem;
+  font-size: 0.66rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -680,7 +680,25 @@ body {
 
   .ad-content {
     left: 2.1rem;
-    bottom: 4rem;
-    width: min(24rem, 40%);
+    bottom: 4.8rem;
+    width: min(21rem, 37%);
+  }
+
+  .ad-eyebrow {
+    font-size: 0.68rem;
+  }
+
+  .ad-title {
+    font-size: clamp(1.95rem, 2.2vw, 3.15rem);
+  }
+
+  .ad-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.28;
+    max-width: 16rem;
+  }
+
+  .ad-badge {
+    font-size: 0.6rem;
   }
 }
