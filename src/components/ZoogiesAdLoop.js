@@ -24,7 +24,7 @@ function ZoogiesAdLoop({ slides, onSlideChange }) {
     <aside className="ad-panel" aria-label="Zoogies rotating advertisement">
       <article
         key={activeSlide.title}
-        className="ad-slide is-active"
+        className="ad-slide ad-slide--fade-in is-active"
         style={{
           '--glow': activeSlide.glow,
           '--tone-1': activeSlide.palette[0],

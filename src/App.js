@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import './App.css';
 import CannastoreMenu from './components/CannastoreMenu';
 import ZoogiesAdLoop from './components/ZoogiesAdLoop';
@@ -53,8 +53,8 @@ const menuSections = [
         titleDe: 'Extrakte',
         titleEn: 'Extracts',
         items: [
-          { name: '10G', translation: '10 grams', price: '150 EUR' },
-          { name: '20G', translation: '20 grams', price: '240 EUR' },
+          { name: '10G', translation: '10 grams', price: '180 EUR' },
+          { name: '20G', translation: '20 grams', price: '250 EUR' },
           { name: '50G', translation: '50 grams', price: '500 EUR' },
           { name: '100G', translation: '100 grams', price: '900 EUR' },
         ],

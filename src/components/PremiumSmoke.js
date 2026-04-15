@@ -205,11 +205,11 @@ function SmokePlane({
 function PremiumSmoke({ className, style, speed, opacity, brightness, curlAmount, thickness, drift }) {
   const dpr = useMemo(() => {
     if (typeof window === 'undefined') {
-      return 1.5;
+      return 1.75;
     }
 
     const deviceDpr = window.devicePixelRatio || 1;
-    return Math.min(Math.max(deviceDpr, 1.25), 1.75);
+    return Math.min(Math.max(deviceDpr, 1.6), 2);
   }, []);
 
   return (

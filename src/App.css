@@ -89,6 +89,9 @@ body {
 .brand-smoke canvas {
   display: block;
   image-rendering: auto;
+  filter: blur(0.45px) saturate(1.04);
+  transform: scale(1.01);
+  transform-origin: center;
 }
 
 .brand-mark,
@@ -309,6 +312,10 @@ body {
   opacity: 1;
 }
 
+.ad-slide--fade-in {
+  animation: ad-fade-in 520ms ease-out;
+}
+
 .ad-image,
 .ad-image-tint,
 .ad-image-glow,
@@ -487,6 +494,17 @@ body {
   }
 }
 
+@keyframes ad-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.01);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes float-badge {
   0%,
   100% {
@@ -659,5 +677,9 @@ body {
 
   .ad-badge {
     font-size: 0.6rem;
+  }
+
+  .brand-smoke canvas {
+    filter: blur(0.7px) saturate(1.05);
   }
 }
