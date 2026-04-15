@@ -5,6 +5,9 @@
   "description": "Cannabis Store Vienna premium TV display and promotional storefront experience.",
   "author": "Elvis Jelecevic",
   "license": "UNLICENSED",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@react-three/fiber": "^9.6.0",
     "@testing-library/dom": "^10.4.1",
