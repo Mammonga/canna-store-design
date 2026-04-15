@@ -173,7 +173,7 @@ body {
   margin: 0 0 0.9rem;
   padding-top: 0.55rem;
   color: #8cff8f;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   font-weight: 800;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -188,7 +188,7 @@ body {
 }
 
 .section-title-translation {
-  font-size: 0.51rem;
+  font-size: 0.408rem;
   letter-spacing: 0.18em;
 }
 
@@ -212,14 +212,14 @@ body {
 .subgroup-title {
   margin: 0 0 0.9rem;
   color: #8cff8f;
-  font-size: 0.675rem;
+  font-size: 0.54rem;
   font-weight: 800;
   letter-spacing: 0.21em;
   text-transform: uppercase;
 }
 
 .subgroup-title-translation {
-  font-size: 0.51rem;
+  font-size: 0.408rem;
   letter-spacing: 0.16em;
 }
 
@@ -268,14 +268,14 @@ body {
 
 .item-name {
   color: rgba(244, 246, 242, 0.9);
-  font-size: 0.735rem;
+  font-size: 0.588rem;
   line-height: 1.15;
   letter-spacing: 0.02em;
 }
 
 .item-translation {
   color: rgba(226, 235, 225, 0.4);
-  font-size: 0.525rem;
+  font-size: 0.42rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -286,7 +286,7 @@ body {
   flex-direction: column;
   gap: 0.14rem;
   flex: 0 0 auto;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: 0.05em;
@@ -606,12 +606,12 @@ body {
   .section-title {
     margin-bottom: 0.72rem;
     padding-top: 0.2rem;
-    font-size: 0.72rem;
+    font-size: 0.576rem;
   }
 
   .section-title-translation,
   .subgroup-title-translation {
-    font-size: 0.48rem;
+    font-size: 0.384rem;
   }
 
   .section-rule {
@@ -625,7 +625,7 @@ body {
 
   .subgroup-title {
     margin-bottom: 0.68rem;
-    font-size: 0.66rem;
+    font-size: 0.528rem;
   }
 
   .menu-items {
@@ -637,17 +637,17 @@ body {
   }
 
   .item-name {
-    font-size: 0.69rem;
+    font-size: 0.552rem;
     line-height: 1.1;
   }
 
   .item-translation {
-    font-size: 0.465rem;
+    font-size: 0.372rem;
   }
 
   .item-price {
     gap: 0.12rem;
-    font-size: 0.72rem;
+    font-size: 0.576rem;
     line-height: 1.02;
   }
 
