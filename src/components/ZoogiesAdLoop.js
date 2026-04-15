@@ -51,15 +51,6 @@ function ZoogiesAdLoop({ slides, onSlideChange }) {
                 '--package-scale': activeSlide.packageScale || '0.84',
               }}
             />
-            {activeSlide.pebbles?.map((pebble, pebbleIndex) => (
-              <img
-                key={`${activeSlide.title}-pebble-${pebbleIndex}`}
-                className={`ad-pebble ${pebble.className}`}
-                src={pebble.src}
-                alt=""
-                aria-hidden="true"
-              />
-            ))}
             {activeSlide.showPriceBadge ? (
               <div className="ad-price-badge" aria-label={`Ab ${activeSlide.priceText}`}>
                 <span className="ad-price-from">ab</span>
