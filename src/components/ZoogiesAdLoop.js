@@ -2,84 +2,93 @@ import { useEffect, useState } from 'react';
 
 function ZoogiesAdLoop({ slides, onSlideChange }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const activeSlide = slides[activeIndex];
 
   useEffect(() => {
-    onSlideChange?.(slides[activeIndex]?.menuId ?? null);
-  }, [activeIndex]); // eslint-disable-line react-hooks/exhaustive-deps
+    onSlideChange?.(activeSlide?.menuId ?? null);
+  }, [activeSlide, onSlideChange]);
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setActiveIndex((currentIndex) => (currentIndex + 1) % slides.length);
-    }, 9000);
+    }, 10000);
 
     return () => window.clearInterval(intervalId);
   }, [slides.length]);
 
+  if (!activeSlide) {
+    return null;
+  }
+
   return (
     <aside className="ad-panel" aria-label="Zoogies rotating advertisement">
-      {slides.map((slide, index) => (
-        <article
-          key={slide.title}
-          className={`ad-slide ${index === activeIndex ? 'is-active' : ''}`}
-          style={{
-            '--glow': slide.glow,
-            '--tone-1': slide.palette[0],
-            '--tone-2': slide.palette[1],
-            '--tone-3': slide.palette[2],
-          }}
-        >
-          {slide.fullImage ? (
+      <article
+        key={activeSlide.title}
+        className="ad-slide is-active"
+        style={{
+          '--glow': activeSlide.glow,
+          '--tone-1': activeSlide.palette[0],
+          '--tone-2': activeSlide.palette[1],
+          '--tone-3': activeSlide.palette[2],
+        }}
+      >
+        {activeSlide.fullImage ? (
+          <img
+            className="ad-image"
+            src={activeSlide.image}
+            alt={activeSlide.hideContent ? '' : activeSlide.title}
+            aria-hidden={activeSlide.hideContent ? 'true' : undefined}
+            style={{ objectPosition: activeSlide.imagePosition || 'center center' }}
+          />
+        ) : (
+          <div className="ad-product-scene">
             <img
-              className="ad-image"
-              src={slide.image}
-              alt={slide.hideContent ? '' : slide.title}
-              aria-hidden={slide.hideContent ? 'true' : undefined}
-              style={{ objectPosition: slide.imagePosition || 'center center' }}
+              className="ad-package-image"
+              src={activeSlide.image}
+              alt={activeSlide.title}
+              style={{
+                objectPosition: activeSlide.packagePosition || 'center center',
+                '--package-scale': activeSlide.packageScale || '0.84',
+              }}
             />
-          ) : (
-            <div className="ad-product-scene">
+            {activeSlide.pebbles?.map((pebble, pebbleIndex) => (
               <img
-                className="ad-package-image"
-                src={slide.image}
-                alt={slide.title}
-                style={{
-                  objectPosition: slide.packagePosition || 'center center',
-                  '--package-scale': slide.packageScale || '0.84',
-                }}
+                key={`${activeSlide.title}-pebble-${pebbleIndex}`}
+                className={`ad-pebble ${pebble.className}`}
+                src={pebble.src}
+                alt=""
+                aria-hidden="true"
               />
-              {slide.pebbles?.map((pebble, pebbleIndex) => (
-                <img
-                  key={`${slide.title}-pebble-${pebbleIndex}`}
-                  className={`ad-pebble ${pebble.className}`}
-                  src={pebble.src}
-                  alt=""
-                  aria-hidden="true"
-                />
-              ))}
-              {slide.showPriceBadge ? (
-                <div className="ad-price-badge" aria-label={`Ab ${slide.priceText}`}>
-                  <span className="ad-price-from">ab</span>
-                  <span className="ad-price-amount">{slide.priceText}</span>
-                  <span className="ad-price-unit">pro Stk.</span>
-                </div>
-              ) : null}
-              {slide.comingSoon ? (
-                <div className="ad-coming-soon">Coming Soon</div>
-              ) : null}
-            </div>
-          )}
-          <div className="ad-image-tint" />
-          <div className="ad-image-glow" />
-          {!slide.hideContent ? (
-            <div className="ad-content">
-              <p className="ad-eyebrow">{slide.eyebrow}</p>
-              <h2 className="ad-title">{slide.title}</h2>
-              <p className="ad-subtitle">{slide.subtitle}</p>
-              <div className="ad-badge">Zoogies Aroma Pebbles</div>
-            </div>
-          ) : null}
-        </article>
-      ))}
+            ))}
+            {activeSlide.showPriceBadge ? (
+              <img
+                className="ad-price-badge"
+                src={`${process.env.PUBLIC_URL}/price_badge.svg`}
+                alt="Price badge"
+                aria-hidden="true"
+              />
+            ) : null}
+            {activeSlide.comingSoon ? (
+              <img
+                className="ad-coming-soon"
+                src={`${process.env.PUBLIC_URL}/coming_soon.svg`}
+                alt="Coming soon"
+                aria-hidden="true"
+              />
+            ) : null}
+          </div>
+        )}
+        <div className="ad-image-tint" />
+        <div className="ad-image-glow" />
+        {!activeSlide.hideContent ? (
+          <div className="ad-content">
+            <p className="ad-eyebrow">{activeSlide.eyebrow}</p>
+            <h2 className="ad-title">{activeSlide.title}</h2>
+            <p className="ad-subtitle">{activeSlide.subtitle}</p>
+            <div className="ad-badge">Zoogies Aroma Pebbles</div>
+          </div>
+        ) : null}
+      </article>
 
       <div className="ad-progress" aria-hidden="true">
         {slides.map((slide, index) => (
