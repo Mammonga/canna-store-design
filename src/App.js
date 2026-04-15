@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import CannastoreMenu from './components/CannastoreMenu';
 import ZoogiesAdLoop from './components/ZoogiesAdLoop';
