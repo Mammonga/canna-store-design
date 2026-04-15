@@ -67,8 +67,8 @@ function CannastoreMenu({ sections, activeMenuId }) {
                       values="0.011 0.048;0.018 0.070;0.013 0.054;0.016 0.062;0.011 0.048"
                       dur="19s" repeatCount="indefinite"/>
                   </feTurbulence>
-                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R" yChannelSelector="G" result="d"/>
-                  <feGaussianBlur in="d" stdDeviation="3.5"/>
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="11" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                  <feGaussianBlur in="d" stdDeviation="2.5"/>
                 </filter>
 
                 {/* Medium turbulence – mid glow, tendril, wisps */}
@@ -78,8 +78,8 @@ function CannastoreMenu({ sections, activeMenuId }) {
                       values="0.008 0.038;0.015 0.062;0.010 0.048;0.013 0.056;0.008 0.038"
                       dur="26s" repeatCount="indefinite"/>
                   </feTurbulence>
-                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" xChannelSelector="R" yChannelSelector="G" result="d"/>
-                  <feGaussianBlur in="d" stdDeviation="9"/>
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="21" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                  <feGaussianBlur in="d" stdDeviation="6.5"/>
                 </filter>
 
                 {/* Heavy turbulence – outer atmospheric bloom */}
@@ -89,8 +89,8 @@ function CannastoreMenu({ sections, activeMenuId }) {
                       values="0.007 0.030;0.013 0.052;0.009 0.040;0.011 0.046;0.007 0.030"
                       dur="32s" repeatCount="indefinite"/>
                   </feTurbulence>
-                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" result="d"/>
-                  <feGaussianBlur in="d" stdDeviation="19"/>
+                  <feDisplacementMap in="SourceGraphic" in2="noise" scale="32" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                  <feGaussianBlur in="d" stdDeviation="13"/>
                 </filter>
 
                 <linearGradient id="smokeGradCore" x1="0%" y1="50%" x2="100%" y2="50%">
@@ -120,7 +120,7 @@ function CannastoreMenu({ sections, activeMenuId }) {
               <path className="smoke-outer-glow" d={S.A}>
                 <animate attributeName="d"
                   values={v('A','C','E','B','D','A')}
-                  dur="54s" repeatCount="indefinite"
+                  dur="72s" repeatCount="indefinite"
                   calcMode="spline" keyTimes={KT.synco} keySplines={KS5}/>
               </path>
 
@@ -128,7 +128,7 @@ function CannastoreMenu({ sections, activeMenuId }) {
               <path className="smoke-mid-glow" d={S.D}>
                 <animate attributeName="d"
                   values={v('D','A','F','C','B','D')}
-                  dur="41s" repeatCount="indefinite"
+                  dur="54s" repeatCount="indefinite"
                   calcMode="spline" keyTimes={KT.lazy} keySplines={KS5b}/>
               </path>
 
@@ -136,7 +136,7 @@ function CannastoreMenu({ sections, activeMenuId }) {
               <path className="smoke-tendril" d={T.A}>
                 <animate attributeName="d"
                   values={vt('A','C','F','B','E','D','A')}
-                  dur="46s" repeatCount="indefinite"
+                  dur="62s" repeatCount="indefinite"
                   calcMode="spline"
                   keyTimes="0;0.14;0.32;0.54;0.72;0.88;1"
                   keySplines={`${KS5};0.4 0 0.6 1`}/>
@@ -146,7 +146,7 @@ function CannastoreMenu({ sections, activeMenuId }) {
               <path className="smoke-ribbon" d={S.B}>
                 <animate attributeName="d"
                   values={v('B','E','A','D','F','C','B')}
-                  dur="29s" repeatCount="indefinite"
+                  dur="40s" repeatCount="indefinite"
                   calcMode="spline"
                   keyTimes="0;0.14;0.32;0.54;0.72;0.88;1"
                   keySplines={`${KS5c};0.2 0 0.8 1`}/>
@@ -156,7 +156,7 @@ function CannastoreMenu({ sections, activeMenuId }) {
               <path className="smoke-core" d={S.F}>
                 <animate attributeName="d"
                   values={v('F','B','D','A','E','C','F')}
-                  dur="22s" repeatCount="indefinite"
+                  dur="30s" repeatCount="indefinite"
                   calcMode="spline"
                   keyTimes="0;0.16;0.36;0.56;0.74;0.90;1"
                   keySplines={`${KS5c};0.1 0 0.9 1`}/>
@@ -166,7 +166,7 @@ function CannastoreMenu({ sections, activeMenuId }) {
               <path className="smoke-highlight" d={S.E}>
                 <animate attributeName="d"
                   values={v('E','D','B','F','A','C','E')}
-                  dur="36s" repeatCount="indefinite"
+                  dur="48s" repeatCount="indefinite"
                   calcMode="spline"
                   keyTimes="0;0.18;0.40;0.62;0.80;0.92;1"
                   keySplines={`${KS5b};0.3 0 0.7 1`}/>

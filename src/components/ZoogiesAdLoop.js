@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react';
 
-const comingSoonImage = `${process.env.PUBLIC_URL}/coming_soon.svg`;
-const priceBadgeImage = `${process.env.PUBLIC_URL}/price_badge.svg`;
-
 function ZoogiesAdLoop({ slides, onSlideChange }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -60,18 +57,14 @@ function ZoogiesAdLoop({ slides, onSlideChange }) {
                 />
               ))}
               {slide.showPriceBadge ? (
-                <img
-                  className="ad-price-badge"
-                  src={priceBadgeImage}
-                  alt="Price badge"
-                />
+                <div className="ad-price-badge" aria-label={`Ab ${slide.priceText}`}>
+                  <span className="ad-price-from">ab</span>
+                  <span className="ad-price-amount">{slide.priceText}</span>
+                  <span className="ad-price-unit">pro Stk.</span>
+                </div>
               ) : null}
               {slide.comingSoon ? (
-                <img
-                  className="ad-coming-soon"
-                  src={comingSoonImage}
-                  alt="Coming soon"
-                />
+                <div className="ad-coming-soon">Coming Soon</div>
               ) : null}
             </div>
           )}

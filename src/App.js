@@ -75,6 +75,7 @@ const slides = [
     packagePosition: '56% 52%',
     packageScale: '0.68',
     showPriceBadge: true,
+    priceText: '45 €',
     pebbles: [
       { src: `${process.env.PUBLIC_URL}/PurplePebble.png`, className: 'pebble-left' },
       { src: `${process.env.PUBLIC_URL}/PurplePebble.png`, className: 'pebble-front' },
@@ -91,6 +92,7 @@ const slides = [
     packagePosition: '56% 52%',
     packageScale: '0.68',
     showPriceBadge: true,
+    priceText: '45 €',
     pebbles: [
       { src: `${process.env.PUBLIC_URL}/StrawberryPebble.png`, className: 'pebble-left' },
       { src: `${process.env.PUBLIC_URL}/StrawberryPebble.png`, className: 'pebble-front' },
