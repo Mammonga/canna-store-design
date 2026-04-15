@@ -74,24 +74,23 @@ body {
   align-items: center;
   gap: 1.2rem;
   min-height: 7rem;
-  overflow: hidden;
   isolation: isolate;
 }
 
 .brand-smoke {
   position: absolute;
-  inset: -8% -6% -12% -8%;
+  left: 1.8rem;
+  top: 62%;
+  width: 96%;
+  height: auto;
   z-index: 0;
   opacity: 0.88;
-  transform: translateZ(0);
-}
-
-.brand-smoke canvas {
   display: block;
-  image-rendering: auto;
-  filter: blur(0.45px) saturate(1.04);
-  transform: scale(1.01);
-  transform-origin: center;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  filter: saturate(1.05);
+  transform: translateY(-50%) translateZ(0);
 }
 
 .brand-mark,
@@ -173,7 +172,7 @@ body {
   margin: 0 0 0.9rem;
   padding-top: 0.55rem;
   color: #8cff8f;
-  font-size: 0.6rem;
+  font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -188,7 +187,7 @@ body {
 }
 
 .section-title-translation {
-  font-size: 0.408rem;
+  font-size: 0.449rem;
   letter-spacing: 0.18em;
 }
 
@@ -212,14 +211,14 @@ body {
 .subgroup-title {
   margin: 0 0 0.9rem;
   color: #8cff8f;
-  font-size: 0.54rem;
+  font-size: 0.594rem;
   font-weight: 800;
   letter-spacing: 0.21em;
   text-transform: uppercase;
 }
 
 .subgroup-title-translation {
-  font-size: 0.408rem;
+  font-size: 0.449rem;
   letter-spacing: 0.16em;
 }
 
@@ -268,14 +267,14 @@ body {
 
 .item-name {
   color: rgba(244, 246, 242, 0.9);
-  font-size: 0.588rem;
+  font-size: 0.647rem;
   line-height: 1.15;
   letter-spacing: 0.02em;
 }
 
 .item-translation {
   color: rgba(226, 235, 225, 0.4);
-  font-size: 0.42rem;
+  font-size: 0.462rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -286,7 +285,7 @@ body {
   flex-direction: column;
   gap: 0.14rem;
   flex: 0 0 auto;
-  font-size: 0.6rem;
+  font-size: 0.66rem;
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: 0.05em;
@@ -606,12 +605,12 @@ body {
   .section-title {
     margin-bottom: 0.72rem;
     padding-top: 0.2rem;
-    font-size: 0.576rem;
+    font-size: 0.634rem;
   }
 
   .section-title-translation,
   .subgroup-title-translation {
-    font-size: 0.384rem;
+    font-size: 0.422rem;
   }
 
   .section-rule {
@@ -625,7 +624,7 @@ body {
 
   .subgroup-title {
     margin-bottom: 0.68rem;
-    font-size: 0.528rem;
+    font-size: 0.581rem;
   }
 
   .menu-items {
@@ -637,17 +636,17 @@ body {
   }
 
   .item-name {
-    font-size: 0.552rem;
+    font-size: 0.607rem;
     line-height: 1.1;
   }
 
   .item-translation {
-    font-size: 0.372rem;
+    font-size: 0.409rem;
   }
 
   .item-price {
     gap: 0.12rem;
-    font-size: 0.576rem;
+    font-size: 0.634rem;
     line-height: 1.02;
   }
 
@@ -677,9 +676,5 @@ body {
 
   .ad-badge {
     font-size: 0.6rem;
-  }
-
-  .brand-smoke canvas {
-    filter: blur(0.7px) saturate(1.05);
   }
 }

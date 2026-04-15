@@ -1,13 +1,17 @@
 import logoImage from '../assets/cannastoreLogo';
 import MenuSection from './MenuSection';
-import PremiumSmoke from './PremiumSmoke';
 
 function CannastoreMenu({ sections, activeMenuId }) {
   return (
     <section className="menu-panel">
       <header className="menu-header">
         <div className="brand-row">
-          <PremiumSmoke className="brand-smoke" opacity={0.82} brightness={1.05} thickness={0.1} speed={0.16} drift={0.024} curlAmount={0.74} />
+          <img
+            className="brand-smoke"
+            src={`${process.env.PUBLIC_URL}/green smoke.png`}
+            alt=""
+            aria-hidden="true"
+          />
           <div className="brand-mark" aria-hidden="true">
             <img src={logoImage} alt="" />
           </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import './App.css';
 import CannastoreMenu from './components/CannastoreMenu';
 import ZoogiesAdLoop from './components/ZoogiesAdLoop';
@@ -28,8 +28,8 @@ const menuSections = [
         titleDe: 'Zoogies Aroma Pebbles',
         titleEn: 'Aroma Pebbles',
         items: [
-          { menuId: 'zoogies-blueberry-pebbles', name: 'Blueberry Pebbles', translation: 'Blaubeere', price: '1x 45€ · 3x 99€', accentColor: '#4f7cff' },
-          { menuId: 'zoogies-strawberry-pop', name: 'Strawberry Pop', translation: 'Erdbeere', price: '1x 45€ · 3x 99€', accentColor: '#ff5ba4' },
+          { menuId: 'zoogies-blueberry-pebbles', name: 'Blueberry Pebbles', translation: 'Blaubeere', price: '45€', accentColor: '#4f7cff' },
+          { menuId: 'zoogies-strawberry-pop', name: 'Strawberry Pop', translation: 'Erdbeere', price: '45€', accentColor: '#ff5ba4' },
         ],
       },
     ],
