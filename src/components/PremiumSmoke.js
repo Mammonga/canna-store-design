@@ -203,12 +203,21 @@ function SmokePlane({
 }
 
 function PremiumSmoke({ className, style, speed, opacity, brightness, curlAmount, thickness, drift }) {
+  const dpr = useMemo(() => {
+    if (typeof window === 'undefined') {
+      return 1.5;
+    }
+
+    const deviceDpr = window.devicePixelRatio || 1;
+    return Math.min(Math.max(deviceDpr, 1.25), 1.75);
+  }, []);
+
   return (
     <div className={className} style={{ pointerEvents: 'none', ...style }}>
       <Canvas
-        dpr={1}
+        dpr={dpr}
         frameloop="always"
-        gl={{ alpha: true, antialias: false, powerPreference: 'high-performance', preserveDrawingBuffer: false }}
+        gl={{ alpha: true, antialias: true, powerPreference: 'high-performance', preserveDrawingBuffer: false }}
         style={{ width: '100%', height: '100%', display: 'block' }}
         camera={{ manual: true }}
       >
