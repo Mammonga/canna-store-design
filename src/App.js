@@ -29,6 +29,7 @@ const menuSections = [
         titleEn: 'Aroma Pebbles',
         items: [
           { menuId: 'zoogies-blueberry-pebbles', name: 'Blueberry Pebbles', translation: 'Blaubeere', price: '1x 45€ · 3x 99€', accentColor: '#4f7cff' },
+          { menuId: 'zoogies-strawberry-pop', name: 'Strawberry Pop', translation: 'Erdbeere', price: '1x 45€ · 3x 99€', accentColor: '#ff5ba4' },
         ],
       },
     ],
@@ -56,11 +57,6 @@ const menuSections = [
           { name: '20G', translation: '20 grams', price: '240 EUR' },
           { name: '50G', translation: '50 grams', price: '500 EUR' },
           { name: '100G', translation: '100 grams', price: '900 EUR' },
-        ],
-      },
-      {
-        items: [
-          { menuId: 'zoogies-strawberry-pop', name: 'Strawberry Pop', translation: 'Erdbeere', price: '1x 45€ · 3x 99€', accentColor: '#ff5ba4' },
         ],
       },
     ],

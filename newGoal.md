@@ -1,4 +1,4 @@
-# Cannastore Vienna — Implementation Schema
+<!-- # Cannastore Vienna — Implementation Schema
 > Structured task plan covering design polish, production readiness, and multi-store deployment.
 > Each task is self-contained and ordered by priority.
 
@@ -161,7 +161,7 @@ Zoogies Aroma Pebbles is prominently featured in the right panel but does not ap
 - App handles fetch failure gracefully (shows last known data, not a blank screen).
 - Works on all store display hardware with the same codebase.
 
----
+--- --> done
 
 ## TASK-07 · Smoke performance — test & conditional fallback
 **Priority:** P2 — deployment risk  
