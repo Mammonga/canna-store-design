@@ -5,10 +5,25 @@ function ZoogiesAdLoop({ slides, onSlideChange }) {
   const activeSlide = slides[activeIndex];
 
   useEffect(() => {
+    if (slides.length === 0) {
+      setActiveIndex(0);
+      return;
+    }
+
+    if (activeIndex >= slides.length) {
+      setActiveIndex(0);
+    }
+  }, [activeIndex, slides.length]);
+
+  useEffect(() => {
     onSlideChange?.(activeSlide?.menuId ?? null);
   }, [activeSlide, onSlideChange]);
 
   useEffect(() => {
+    if (slides.length <= 1) {
+      return undefined;
+    }
+
     const intervalId = window.setInterval(() => {
       setActiveIndex((currentIndex) => (currentIndex + 1) % slides.length);
     }, 10000);
