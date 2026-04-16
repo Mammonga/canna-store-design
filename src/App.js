@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import './App.css';
 import CannastoreMenu from './components/CannastoreMenu';
 import ZoogiesAdLoop from './components/ZoogiesAdLoop';
@@ -136,15 +136,6 @@ const slides = [
     imagePosition: 'center center',
     hideContent: true,
     title: 'Shelf Moment',
-  },
-  {
-    image: `${process.env.PUBLIC_URL}/ZoogiesBaking_kari-shea-DesRxj28Ns-Kopie4x3-1536x1152.webp`,
-    glow: 'rgba(248, 160, 125, 0.4)',
-    palette: ['#180d0b', '#5f2d1f', '#f8a07d'],
-    fullImage: true,
-    imagePosition: 'center center',
-    hideContent: true,
-    title: 'Kitchen Edit',
   },
 ];
 
