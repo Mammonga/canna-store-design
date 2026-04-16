@@ -5,7 +5,7 @@ import ZoogiesAdLoop from './components/ZoogiesAdLoop';
 
 const menuSections = [
   {
-    titleDe: 'Premium QualitÃ¤t',
+    titleDe: 'Premium Qualität',
     titleEn: 'Premium Quality',
     items: [
       { name: 'Hash', translation: 'Hash', price: ['1G - 25 EUR', '2,5G - 50 EUR'] },
@@ -13,7 +13,7 @@ const menuSections = [
     ],
     groups: [
       {
-        titleDe: 'Cannain Ã–l Full Spektrum',
+        titleDe: 'Cannain Öl Full Spektrum',
         titleEn: 'Cannain Oil Full Spectrum',
         items: [
           { name: 'Synergy Core', translation: '5% CBD + 5% CBG', price: '65 EUR' },
@@ -28,8 +28,8 @@ const menuSections = [
         titleDe: 'Zoogies Aroma Pebbles',
         titleEn: 'Aroma Pebbles',
         items: [
-          { menuId: 'zoogies-blueberry-pebbles', name: 'Blueberry Pebbles', translation: 'Blaubeere', price: '45â‚¬', accentColor: '#4f7cff' },
-          { menuId: 'zoogies-strawberry-pop', name: 'Strawberry Pop', translation: 'Erdbeere', price: '45â‚¬', accentColor: '#ff5ba4' },
+          { menuId: 'zoogies-blueberry-pebbles', name: 'Blueberry Pebbles', translation: 'Blaubeere', price: '45‚¬', accentColor: '#4f7cff' },
+          { menuId: 'zoogies-strawberry-pop', name: 'Strawberry Pop', translation: 'Erdbeere', price: '45‚¬', accentColor: '#ff5ba4' },
         ],
       },
     ],
@@ -75,7 +75,7 @@ const slides = [
     packagePosition: '56% 52%',
     packageScale: '0.62',
     showPriceBadge: true,
-    priceText: '45 â‚¬',
+    priceText: '45‚¬',
     pebbles: [
       { src: `${process.env.PUBLIC_URL}/PurplePebble.png`, className: 'pebble-left' },
       { src: `${process.env.PUBLIC_URL}/PurplePebble.png`, className: 'pebble-front' },
